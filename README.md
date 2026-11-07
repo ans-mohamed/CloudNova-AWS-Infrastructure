@@ -27,8 +27,7 @@ The architecture follows AWS security and networking best practices, applying ne
 
 ## 🏗️ Architecture Diagram
 
-![CloudNova AWS Architecture](D:\Project\IMG_444444.PNG)
-
+![CloudNova Architecture](./IMG.CloudNova.PNG)
 **AWS Region:** US East (N. Virginia) — `us-east-1`
 
 The infrastructure is divided into three independent VPCs connected through a centralized Transit Gateway.
