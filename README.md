@@ -1,17 +1,17 @@
-# ☁️ CloudNova Enterprise AWS Infrastructure
+# ☁️ CloudNova AWS Infrastructure
 
 [![AWS Architecture](https://img.shields.io/badge/AWS-Multi--VPC%20%7C%20Transit%20Gateway-orange?logo=amazon-aws)](https://aws.amazon.com)
 [![Infrastructure](https://img.shields.io/badge/DevOps-Automation%20%7C%20Cloud-blue)](https://github.com/ans-mohamed/CloudNova-AWS-Infrastructure)
-[![Status](https://img.shields.io/badge/Status-Production%20Ready-success)](https://github.com/ans-mohamed/CloudNova-AWS-Infrastructure)
+[![Status](https://img.shields.io/badge/Status-Portfolio%20Project-success)](https://github.com/ans-mohamed/CloudNova-AWS-Infrastructure)[cite: 1]
 
 **Secure • Scalable • Highly Available • Monitored**  
-A production-oriented AWS infrastructure architecture designed for **CloudNova Solutions** to provide a secure, scalable, and highly available environment for hosting web applications, managing databases, sharing files, and automating backups.
+A structured AWS infrastructure architecture designed for **CloudNova** to provide a secure, scalable, and highly available environment for hosting web applications, managing databases, sharing files, and automating backups.
 
 ---
 
 ## 📌 Project Overview
 
-CloudNova Solutions is a growing technology company that requires a reliable cloud infrastructure to support its application, data, and operations teams.
+CloudNova is a technology project that requires a reliable cloud infrastructure to support its application, data, and operations teams.
 This project demonstrates the design and implementation of a multi-VPC AWS architecture that provides:
 - Secure network isolation.
 - High availability across multiple Availability Zones.
@@ -19,7 +19,7 @@ This project demonstrates the design and implementation of a multi-VPC AWS archi
 - Centralized network connectivity.
 - Private database access.
 - Shared file storage.
-- Automated database backups.
+- Automated database backups using **Bash Scripts & Cron Jobs**.
 - Infrastructure monitoring and alerting.
 
 The architecture follows AWS security and networking best practices, applying network segmentation and least-privilege access wherever possible.
@@ -28,7 +28,7 @@ The architecture follows AWS security and networking best practices, applying ne
 
 ## 🏗️ Architecture Diagram
 
-![CloudNova Architecture](./IMG.CloudNova.PNG)
+![CloudNova Architecture](./IMG.CloudNova.PNG)[cite: 1]
 
 **AWS Region:** US East (N. Virginia) — `us-east-1`  
 The infrastructure is divided into three independent VPCs connected through a centralized Transit Gateway.
@@ -101,12 +101,12 @@ Amazon EFS provides a shared file system for application servers where both EC2 
 
 ---
 
-## 💾 Backup & Disaster Recovery
+## 💾 Backup & Disaster Recovery (Bash Script & Cron Job)
 
-Database backups are handled through a scheduled automated workflow:
-1. PostgreSQL database backup using `pg_dump`.
-2. Backup file generation and secure transfer.
-3. Uploading backups to Amazon S3 with **S3 Versioning** enabled and lifecycle policies configured for retention management.
+Database backups are fully automated using a custom **Bash Script** combined with a Linux **Cron Job** for scheduled execution:
+1. **Automation Script:** A custom Bash script (`backup.sh`) executes `pg_dump` to securely extract the PostgreSQL database.
+2. **Scheduled Execution:** Linux **Cron Job** triggers the backup script automatically at regular intervals (e.g., daily).
+3. **Cloud Storage:** The generated backup archive is securely uploaded to **Amazon S3** with **S3 Versioning** and lifecycle policies enabled for retention management.
 
 ---
 
@@ -130,7 +130,8 @@ AWS Transit Gateway acts as the central networking hub connecting the Operations
 - Secure Bastion Host Administration & Private Database.
 - Internet-Facing ALB with EC2 Auto Scaling.
 - Shared Storage Using Amazon EFS.
-- Automated Database Backup Workflow with S3 Versioning.
+- **Automated Backup Workflow via Bash Script and Cron Job.**
+- S3 Versioning and Lifecycle Management.
 - CloudWatch Monitoring and SNS Notifications.
 
 ---
@@ -140,7 +141,7 @@ AWS Transit Gateway acts as the central networking hub connecting the Operations
 * **Cloud Computing:** AWS Infrastructure Design, Networking, High Availability, and Cloud Security.
 * **Networking:** VPC Design, Public/Private Subnets, Route Tables, NAT/Internet Gateways, Transit Gateway, and Security Groups.
 * **Compute & Storage:** Amazon EC2, ALB, ASG, Amazon EFS, RDS, and S3.
-* **Monitoring & Automation:** Amazon CloudWatch, SNS, Linux Shell Scripting, and PostgreSQL Backup Automation.
+* **Monitoring & Automation:** Amazon CloudWatch, SNS, Linux Shell Scripting (Bash), Cron Jobs, and PostgreSQL Backup Automation.
 
 ---
 
@@ -155,3 +156,15 @@ CloudNova-AWS-Infrastructure/
 ├── scripts/
 │   └── backup.sh
 └── .gitignore
+---
+
+## 👨‍💻 Author
+
+**Ans Mohamed Abdulalim (ans-mohamed)**  
+* **Role:** Cloud & DevOps Enthusiast | CS Department Student  
+* **Email:** `ans.mohamed442005@gmail.com`  
+* **GitHub:** [ans-mohamed](https://github.com/ans-mohamed)
+
+---
+
+⭐ *If you find this project interesting, feel free to explore the architecture and its implementation!*
