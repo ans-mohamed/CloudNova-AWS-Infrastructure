@@ -156,6 +156,8 @@ CloudNova-AWS-Infrastructure/
 ├── scripts/
 │   └── backup.sh
 └── .gitignore
+```
+
 ---
 
 ## 👨‍💻 Author
